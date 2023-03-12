@@ -82,7 +82,8 @@ for index in range(0, len(df) - (num_years+1) * 12, 12): #for each simulation of
     num_sims += 1
     portfolio = starting_portfolio
     simulation_start = index + 12
- 
+    results_df.append([df.loc[simulation_start,'Date'],0,portfolio])
+    
     latest_iteration.text(f'Running simulations...')
     bar.progress(num_sims/np.ceil((len(df) - (num_years+1)*12)/12))
     
