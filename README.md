@@ -10,7 +10,7 @@ You can see the project live here: [https://kyfirecalc.streamlit.app/](https://k
 
 # Install and Run The Project
 After cloning the repository, go to the folder and use `pip install -r requirements.txt` to install requirements. 
-Then use `streamlit run KYFireCalc.py` to run the app locally.
+Then use `streamlit run KYFireCALC.py` to run the app locally.
 
 
 # Other Notes
