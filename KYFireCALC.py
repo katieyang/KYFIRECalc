@@ -8,6 +8,14 @@ import numpy as np
 import plotly.graph_objects as go
 
 st.markdown("""
+  <style>
+    .css-hxt7ib.e1fqkh3o2 {
+      margin-top: -75px;
+    }
+  </style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
         <style>
                .block-container {
                     padding-top: 0rem;
