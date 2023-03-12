@@ -148,3 +148,5 @@ figure.update_layout(
 )
 
 st.plotly_chart(figure)
+
+st.write("Double click on a year in the legend to see just that year. Double click again to bring back all the years.")
