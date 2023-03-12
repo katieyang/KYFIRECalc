@@ -1,0 +1,1 @@
+CPI, bond, and stock monthly returns: http://www.econ.yale.edu/~shiller/data.htm
