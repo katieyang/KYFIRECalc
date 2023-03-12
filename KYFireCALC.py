@@ -49,7 +49,7 @@ annual_fees_equities = annual_fees_equities_whole/100
 annual_fees_bonds_whole = st.sidebar.slider("Annual Management Fees (Bonds)",0.0,1.5,0.1,0.05,format="%f%%")
 annual_fees_bonds = annual_fees_bonds_whole/100
 starting_portfolio = 100
-equity_weight_whole = st.sidebar.slider("Equity Weight (Remainder is bonds)",0,100,60,format="%f%%")
+equity_weight_whole = st.sidebar.slider("Equity Weight (Remainder is Bonds)",0,100,60,format="%f%%")
 equity_weight = equity_weight_whole/100
 bond_weight = 1-equity_weight
 amount_for_success_whole = st.sidebar.slider("% of portfolio spending power that needs to be left at the end of simulation to be considered successful",0,100,0,format="%f%%")
