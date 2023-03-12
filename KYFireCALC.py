@@ -7,6 +7,11 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
+st.set_page_config(
+    page_title="KY FireCalc App",
+    initial_sidebar_state="expanded"
+)
+
 st.markdown("""
   <style>
     .css-hxt7ib.e1fqkh3o2 {
