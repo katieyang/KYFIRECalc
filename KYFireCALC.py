@@ -36,7 +36,7 @@ st.sidebar.header("Simulation Settings")
 num_years = st.sidebar.slider("Number of Years In Retirement",1,100,30)
 multiple_period = st.sidebar.checkbox('Check if you want two different withdrawal periods / rates')
 if not multiple_period:
-    withdrawal_rate_whole = st.sidebar.slider("Withdrawal Rate",0.0,20.0,4.0,0.5,format="%f%%")
+    withdrawal_rate_whole = st.sidebar.slider("Withdrawal Rate (Percent of Starting Portfolio)",0.0,20.0,4.0,0.5,format="%f%%")
     withdrawal_rate = withdrawal_rate_whole/100
 else:
     withdrawal_rate_1_whole = st.sidebar.slider("Withdrawal Rate 1",0.0,20.0,3.5,0.5,format="%f%%")
@@ -59,7 +59,7 @@ amount_for_success = amount_for_success_whole/100
 st.title("KY FIRECalc App")
 
 st.write("""Using the simulation settings in the left sidebar, this app simulates portfolio returns using US stock and bond real returns data since 1872 from Robert Shiller which can be found [here](http://www.econ.yale.edu/~shiller/data.htm). 
-The portfolio grows and is withdrawn from monthly. It is also assumed to be rebalanced monthly. The methodlogy was inspired by [Early Retirement Now's Safe Withdrawal Rate series](https://earlyretirementnow.com/safe-withdrawal-rate-series/). 
+The portfolio grows and is withdrawn from monthly. It is also assumed to be rebalanced monthly. The methodology was inspired by [Early Retirement Now's Safe Withdrawal Rate series](https://earlyretirementnow.com/safe-withdrawal-rate-series/). 
 The code is up on GitHub here. If there are any questions about the app, you can reach me at 13hy22@queensu.ca.""")
 
 # progress bar
