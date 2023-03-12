@@ -99,7 +99,6 @@ pyspark==3.2.1
 python-dateutil==2.8.2
 pytz==2022.1
 pytz-deprecation-shim==0.1.0.post0
-pywin32==304
 pywinpty==2.0.5
 PyYAML==6.0
 pyzmq==23.0.0
