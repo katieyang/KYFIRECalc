@@ -58,7 +58,7 @@ amount_for_success = amount_for_success_whole/100
 #title
 st.title("KY FIRECalc App")
 
-st.write("""Using the simulation settings in the left sidebar, this app simulates portfolio returns using US stock and bond real returns data since 1872 from Robert Shiller which can be found [here](http://www.econ.yale.edu/~shiller/data.htm). 
+st.write("""Using the simulation settings in the left sidebar, this app helps users plan for retirement by simulating portfolio returns using US stock and bond real returns data since 1872 from Robert Shiller which can be found [here](http://www.econ.yale.edu/~shiller/data.htm). 
 The portfolio grows and is withdrawn from monthly. It is also assumed to be rebalanced monthly. The methodology was inspired by [Early Retirement Now's Safe Withdrawal Rate series](https://earlyretirementnow.com/safe-withdrawal-rate-series/). 
 The code is up on GitHub [here](https://github.com/katieyang/KYFIRECalc). If there are any questions about the app, you can reach me at 13hy22@queensu.ca.""")
 
