@@ -36,7 +36,7 @@ st.sidebar.header("Simulation Settings")
 num_years = st.sidebar.slider("Number of Years In Retirement",1,100,30)
 multiple_period = st.sidebar.checkbox('Check if you want two different withdrawal periods / rates')
 if not multiple_period:
-    withdrawal_rate_whole = st.sidebar.slider("Withdrawal Rate (Percent of Starting Portfolio)",0.0,20.0,4.0,0.5,format="%f%%")
+    withdrawal_rate_whole = st.sidebar.slider("Annual Withdrawal Rate (Percent of Starting Portfolio)",0.0,20.0,4.0,0.5,format="%f%%")
     withdrawal_rate = withdrawal_rate_whole/100
 else:
     withdrawal_rate_1_whole = st.sidebar.slider("Withdrawal Rate 1",0.0,20.0,3.5,0.5,format="%f%%")
