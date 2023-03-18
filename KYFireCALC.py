@@ -33,6 +33,7 @@ st.markdown("""
 
 # Set variables for simulation on sidebar
 st.sidebar.header("Simulation Settings")
+starting_portfolio = st.sidebar.number_input('Insert starting portfolio amount:', min_value=0,value=100)
 num_years = st.sidebar.slider("Number of Years In Retirement",1,100,30)
 multiple_period = st.sidebar.checkbox('Check if you want two different withdrawal periods / rates')
 if not multiple_period:
@@ -48,10 +49,19 @@ annual_fees_equities_whole = st.sidebar.slider("Annual Management Fees (Equities
 annual_fees_equities = annual_fees_equities_whole/100
 annual_fees_bonds_whole = st.sidebar.slider("Annual Management Fees (Bonds)",0.0,1.5,0.1,0.05,format="%f%%")
 annual_fees_bonds = annual_fees_bonds_whole/100
-starting_portfolio = 100
-equity_weight_whole = st.sidebar.slider("Equity Weight (Remainder is Bonds)",0,100,60,format="%f%%")
-equity_weight = equity_weight_whole/100
-bond_weight = 1-equity_weight
+multiple_period_equity = st.sidebar.checkbox('Check if you want two different asset allocations')
+if not multiple_period_equity:
+    equity_weight_whole = st.sidebar.slider("Equity Weight (Remainder is Bonds)",0,100,60,format="%f%%")
+    equity_weight = equity_weight_whole/100
+    bond_weight = 1-equity_weight
+else:
+    equity_weight_whole_1 = st.sidebar.slider("Equity Weight 1 (Remainder is Bonds)",0,100,60,format="%f%%")
+    equity_weight_1 = equity_weight_whole_1/100
+    bond_weight_1 = 1-equity_weight_1
+    time_period_2 = st.sidebar.slider("Years of Equity Allocation 1:",0,num_years,5)
+    equity_weight_whole_2 = st.sidebar.slider("Equity Weight 2 (Remainder is Bonds)",0,100,80,format="%f%%")
+    equity_weight_2 = equity_weight_whole_2/100
+    bond_weight_2 = 1-equity_weight_2
 amount_for_success_whole = st.sidebar.slider("% of portfolio spending power that needs to be left at the end of simulation to be considered successful",0,100,0,format="%f%%")
 amount_for_success = amount_for_success_whole/100
 
@@ -94,6 +104,13 @@ for index in range(0, len(df) - (num_years+1) * 12, 12): #for each simulation of
                 monthly_withdrawal_amt = starting_portfolio * withdrawal_rate_1 / 12
             else:
                 monthly_withdrawal_amt = starting_portfolio * withdrawal_rate_2 / 12
+        if multiple_period_equity:
+            if year < time_period_2:
+                equity_weight = equity_weight_1
+                bond_weight = bond_weight_1
+            else:
+                equity_weight = equity_weight_2
+                bond_weight = bond_weight_2
         start_index = index + 12 * (year+1)
         #dollar amount lost every month
         monthly_equity_fees = equity_weight * portfolio * annual_fees_equities / 12
@@ -139,7 +156,7 @@ figure = go.Figure(data = data)
 
 figure.update_layout(
     xaxis_title="Year in Simulation",
-    yaxis_title="Portfolio End Value (Starting is 100)",
+    yaxis_title="Portfolio End Value (Inflation-Adjusted)",
     legend_title="Starting Year of Simulation",
     font=dict(
         family="Courier New, monospace",
