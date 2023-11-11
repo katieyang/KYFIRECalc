@@ -87,7 +87,7 @@ protobuf==3.20.1
 psutil==5.9.1
 pure-eval==0.2.2
 py4j==0.10.9.3
-pyarrow==8.0.0
+pyarrow==14.0.1
 pycparser==2.21
 pydeck==0.7.1
 pygame==2.0.0
